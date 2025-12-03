@@ -1,0 +1,64 @@
+Diagrama de diretórios e arquivos:
+
+Sistema-UBS-Flask/
+├── app.py                 
+├── index.html
+├── requirements.txt
+├── README.md
+├── modulos/                
+│   ├── __init__.py         
+│   ├── dados.py            
+│   ├── validacoes.py       
+│   ├── pacientes.py        
+│   ├── profissionais.py    
+│   └── consultas.py        
+│── dados/                  
+     ├── pacientes.json
+     ├── profissionais.json
+     └── consultas.json
+
+# Este sistema completo inclui:
+# Backend Python com Flask - API REST completa
+# Frontend HTML/CSS/JS atualizado para usar a API
+# Arquivos JSON como banco de dados
+# Validações básicas no backend
+# CORS habilitado para comunicação entre frontend e backend
+# Sistema completo CRUD para todas as entidades
+# O backend Python fornece uma API REST completa para o sistema de agendamento de consultas UBS.
+# O Flask serve o index.html a partir de templates/ usando render_template.​
+# O app.py expõe as rotas /api/... que o index.html chama via fetch.​
+
+** Criar e ativar o ambiente virtual**
+
+# No Windows (PowerShell ou CMD), dentro da pasta do projeto:
+python -m venv venv
+
+Isso cria a pasta venv/ com um Python isolado.​
+
+# Ativar o ambiente virtual (opcional, mas recomendado):
+PowerShell:
+\venv\Scripts\Activate
+
+Ao ativar, o prompt passa a mostrar algo como (venv) no início.​
+
+# Para desativar depois:
+deactivate
+
+# Com o ambiente virtual ativado (venv), instale as dependências do projeto:
+pip install -r requirements.txt
+
+Esses comandos instalam as bibliotecas só dentro do venv, sem mexer no sistema inteiro.​
+
+# Rodar o backend Flask:
+Garanta que o venv está ativado (venv) e que você está dentro da pasta do projeto (ubs-frotnd/).
+
+# Execute o backend:
+python app.py
+
+Se o app.py tiver um if __name__ == '__main__': app.run(...), ele subirá o servidor de desenvolvimento em algo como http://127.0.0.1:5000.​
+
+Com o app rodando, acesse no navegador (ou ctrl + click no endereço no prompt):
+http://127.0.0.1:5000/
+Essa URL deve carregar o seu index.html (pelo render_template).
+
+As chamadas JS dentro do index.html vão bater em http://127.0.0.1:5000/api/....
